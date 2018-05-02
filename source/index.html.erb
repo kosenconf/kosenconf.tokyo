@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>kosenconf tokyo</title>
+    <link rel='stylesheet' href='/style.css'>
+  </head>
+  <body>
+    <div class='container'>
+      <header id='header'>
+        <h1>
+          <span class='h1-one'>KOSEN Conference</span>
+          <span class='h1-two'>in Tokyo 2018</span>
+        </h1>
+        <time>2018/07/15 sun. 10:00~</time>
+      </header>
+      <section id='theme'>
+        <div class='theme-block'>
+          <div class='theme-block-header'>
+            <h2>開催テーマ</h2>
+          </div>
+          <p class='theme-ja'>多様化する技術との巡りあい</p>
+          <p class='theme-en'>Say hello to dynamic technologies</p>
+        </div>
+      </section>
+      <section id='links'>
+        <nav>
+          <a class='btn1'>参加登録する</a>
+          <a class='btn2'>一般発表に応募する</a>
+        </nav>
+      </section>
+
+      <section id='schedule'>
+        <h2>
+          <span class='h2-one'>Schedule</span>
+          <span class='h2-two'>発表プログラム</span>
+        </h2>
+        <div class='timetable'>
+          <%- data.timetable.each do |prog| -%>
+            <div class='tt-row'>
+              <div class='tt-time'><%= prog.time %></div>
+              <div class='tt-avatar'><img alt='avatar' src='<%= prog.avatar %>'></div>
+              <div class='tt-content'>
+                <p class='tt-title'><%= prog.title %></p>
+                <p class='tt-speaker'><%= prog.speaker %></p>
+              </div>
+            </div>
+          <%- end -%>
+        </div>
+      </section>
+
+      <section id='sponsors'>
+        <h2>
+          <span class='h2-one'>Sponsors</span>
+          <span class='h2-two'>出資企業様のご紹介</span>
+        </h2>
+        <div class='sponsors'>
+          <%- data.sponsors.each do |sponsor| -%>
+            <div class='sponsor'>
+              <div class='sponsor-img'><img alt='logo' src='<%= sponsor.logo %>'></div>
+              <h3><%= sponsor.name %>様</h3>
+              <p><%= sponsor.description %></p>
+            </div>
+          <%- end -%>
+        </div>
+      </section>
+
+      <section>
+        <h2>Access</h2>
+      </section>
+    </div>
+  </body>
+</html>

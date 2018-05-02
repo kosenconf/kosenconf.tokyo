@@ -1,0 +1,17 @@
+<svg id="pagetop.svg" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 3px;
+      }
+
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="シェイプ_563" data-name="シェイプ 563" class="cls-1" d="M687.824,3144.23L700.2,3123.2l12.371,21.03H687.824Z" transform="translate(-669 -3105)"/>
+  <circle id="楕円形_2" data-name="楕円形 2" class="cls-2" cx="31.5" cy="31.5" r="30"/>
+</svg>
