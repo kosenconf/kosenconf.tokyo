@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build-job:
-    branches:
-      ignore:
-        - gh-pages
     docker:
       - image: circleci/ruby:latest-node
         environment:
@@ -35,9 +32,6 @@ jobs:
           name: Build
           command: bundle exec middleman build
   deploy-job:
-    branches:
-      ignore:
-        - gh-pages
     docker:
       - image: circleci/ruby:latest-node
     working_directory: ~/git
@@ -60,7 +54,11 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build-job
+      - build-job:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
       - deploy-job:
           requires:
             - build-job
