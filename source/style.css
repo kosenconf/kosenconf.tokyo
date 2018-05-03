@@ -28,7 +28,7 @@ h1 .h1-one {
   display: block;
   font-family: 'Avenir Next', sans-serif;
   font-size: 44px;
-  font-weight: 500;
+  font-weight: normal;
 }
 
 #theme {
@@ -69,7 +69,7 @@ h1 .h1-one {
 }
 .theme-en {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
   font-family: 'Lato', sans-serif;
   margin: 0;
 }
