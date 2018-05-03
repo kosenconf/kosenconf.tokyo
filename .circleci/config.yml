@@ -55,7 +55,7 @@ jobs:
             git config --global user.name kosenconfdecade-chan
             git checkout gh-pages || git checkout --orphan gh-pages
             git rm -rf .
-            cp -a /tmp/workspace/build/ ~/git/
+            cp -a /tmp/workspace/build/. ~/git/
             git add -A
             git commit -m "CircleCI :rocket: ${CIRCLE_SHA1}" --allow-empty
             git push origin gh-pages
