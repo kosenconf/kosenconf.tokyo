@@ -21,7 +21,7 @@ jobs:
           name: Bundle Install
           command: bundle check || bundle install
       - save_cache:
-          key: kosenconfdecade-bundle-v2-{{ checksum "Gemfile.lock" }}
+          key: kosenconfdecadesite-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
       - restore_cache:
