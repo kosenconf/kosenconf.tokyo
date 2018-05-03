@@ -1,0 +1,78 @@
+version: 2
+jobs:
+  build-job:
+    docker:
+      - image: circleci/ruby:latest-node
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+    working_directory: ~/git
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - kosenconfdecadesite-bundle-v2-{{ checksum "Gemfile.lock" }}
+            - kosenconfdecadesite-bundle-v2- 
+      - restore_cache:
+          keys:
+            - kosenconfdecadesite-build
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: kosenconfdecadesite-bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - restore_cache:
+          key: kosenconfdecadesite-build
+          paths:
+            - /tmp/workspace
+      - run:
+          name: Build
+          command: bundle exec middleman build --build-dir /tmp/workspace/build
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - build/*
+      - save_cache:
+          key: kosenconfdecadesite-build
+          paths:
+            - /tmp/workspace
+
+  deploy-job:
+    docker:
+      - image: circleci/ruby:latest-node
+    working_directory: ~/git
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - checkout
+      - run:
+          name: Deploy to gh-pages
+          command: |
+            git config --global user.email kosenconfdecadechan@sorah.jp
+            git config --global user.name kosenconfdecade-chan
+            cp -r ~/git/.circleci /tmp/dot.circleci
+            git checkout gh-pages || git checkout --orphan gh-pages
+            git rm -rf .
+            cp -a /tmp/workspace/build/. ~/git/
+            mv /tmp/dot.circleci ~/git/.circleci
+            git add -A
+            git commit -m "CircleCI :rocket: ${CIRCLE_SHA1}" --allow-empty
+            git push origin gh-pages
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-job:
+          filters:
+            branches:
+              ignore: gh-pages
+      - deploy-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: master
