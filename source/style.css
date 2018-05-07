@@ -1,3 +1,7 @@
+/*
+ * 863px: PC container width
+ */
+
 body {
   background-image: url('./img/1.png');
   text-align: center;
@@ -104,7 +108,7 @@ section {
   background-color: white;
   margin: 0;
   line-height: 31px;
-  font-size: 26px;
+  font-size: 24px;
 }
 @media all and (max-width: 863px) {
   .theme-block-header h2 {
@@ -115,6 +119,9 @@ section {
   }
 }
 
+.theme-block-content {
+  margin-top: calc(35px / 2);
+}
 .theme-ja {
   font-size: 28px;
   font-weight: bold;
