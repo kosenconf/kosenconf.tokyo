@@ -71,7 +71,7 @@ section {
   margin-top: 100px;
 }
 @media all and (max-width: 863px) {
-  section {
+  #header, section {
     padding-left: calc(50 / 640 * 100vw);
     padding-right: calc(50 / 640 * 100vw);
   }
