@@ -4,6 +4,7 @@
 
 body {
   background-image: url('./img/1.png');
+  margin: 8px 0px;
   text-align: center;
   font-family: 'Lato', 'YuGothic', sans-serif;
 }
@@ -71,8 +72,8 @@ section {
 }
 @media all and (max-width: 863px) {
   section {
-    padding-left: calc(20 / 640 * 100vw);
-    padding-right: calc(20 / 640 * 100vw);
+    padding-left: calc(50 / 640 * 100vw);
+    padding-right: calc(50 / 640 * 100vw);
   }
 }
 
