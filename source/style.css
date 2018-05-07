@@ -226,10 +226,11 @@ h2 .h2-two {
 }
 @media all and (max-width: 863px) {
   section > h2 {
-    font-size: 60px;
+    font-size: calc(40px + 1vw);
   }
   h2 .h2-two {
-    font-size: 22px;
+    margin-top: 0;
+    font-size: calc(40px * 0.3 + 1vw);
   }
 }
 
