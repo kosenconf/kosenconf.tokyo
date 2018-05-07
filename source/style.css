@@ -149,7 +149,9 @@ section {
 
 @media all and (max-width: 863px) {
   #links > nav {
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
   }
 }
 
