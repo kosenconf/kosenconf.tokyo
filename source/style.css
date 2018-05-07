@@ -151,11 +151,14 @@ section {
   #links > nav {
     flex-direction: column;
     justify-content: space-between;
-    height: 250px;
+    margin-bottom: -8px;
+  }
+  #links > nav .btn {
+    margin-bottom: 8px;
   }
 }
 
-a.btn1, a.btn2 {
+.btn {
   display: block;
   font-family: 'YuGothic', sans-serif;
   font-weight: bold;
@@ -166,14 +169,22 @@ a.btn1, a.btn2 {
   line-height: calc(117px - 8px);
 }
 @media all and (max-width: 863px) {
-  a.btn1, a.btn2 {
+  .btn {
     font-size: 26px;
+  }
+}
+@media all and (max-width: 400px) { /* < button width (420px - margin10*2)*/
+  .btn {
+    width: 270px;
+    height: 75px;
+    font-size: 14px;
+    line-height: calc(75px - 4px);
   }
 }
 
 .btn1 {
   background-image: url('./img/btn1-pc.svg');
-  background-repeat: no-repeat;
+   background-repeat: no-repeat;
 }
 
 .btn2 {
