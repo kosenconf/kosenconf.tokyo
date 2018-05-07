@@ -71,8 +71,8 @@ section {
 }
 @media all and (max-width: 863px) {
   section {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: calc(20 / 640 * 100vw);
+    padding-right: calc(20 / 640 * 100vw);
   }
 }
 
