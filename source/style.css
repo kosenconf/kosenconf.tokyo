@@ -279,6 +279,22 @@ h2 .h2-two {
   font-weight: normal;
   font-size: 14px;
 }
+@media all and (max-width: 863px) {
+  section#schedule {
+    padding-left: calc(25 / 640 * 100vw);
+    padding-right: calc(25 / 640 * 100vw);
+  }
+  .tt-avatar img {
+    width: 60px;
+    height: 60px;
+  }
+  .tt-time {
+    font-size: 16px;
+  }
+  .tt-title {
+    font-size: 18px;
+  }
+}
 
 
 .sponsors {
