@@ -181,36 +181,60 @@ section {
 
 .btn {
   display: block;
+
   font-family: 'YuGothic', sans-serif;
   font-weight: bold;
   font-size: 20px;
   color: #fff;
+
+  box-sizing: border-box;
   width: 420px;
   height: 117px;
+
   line-height: calc(117px - 8px);
+  border: 0px solid white;
+}
+.btn:before {
+  content: "";
+  float: left;
+  margin-left: 7%;
+  width: 12px;
+  height: calc(117px - 8px);
+}
+.btn:after {
+  background-image: url('./img/btn-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+  float: right;
+  margin-right: 7%;
+  width: 12px;
+  height: calc(117px - 8px);
 }
 @media all and (max-width: 863px) {
   .btn {
-    font-size: 26px;
-  }
-}
-@media all and (max-width: 430px) { /* < button width (420px - margin10*2)*/
-  .btn {
-    width: 270px;
+    width: 100%;
     height: 75px;
-    font-size: 14px;
     line-height: calc(75px - 4px);
+    font-size: calc(13px + 1vw);
+  }
+  .btn:after {
+    height: calc(75px - 4px);
   }
 }
 
 .btn1 {
-  background-image: url('./img/btn1-pc.svg');
-   background-repeat: no-repeat;
+  border-image-source: url('./img/btn1.svg');
+  border-image-slice: 10 fill;
+  border-image-width: 10px;
+  border-image-repeat: round;
 }
 
 .btn2 {
-  background-image: url('./img/btn2-pc.svg');
-  background-repeat: no-repeat;
+  border-image-source: url('./img/btn2.svg');
+  border-image-slice: 10 fill;
+  border-image-width: 10px;
+  border-image-repeat: round;
 }
 
 
