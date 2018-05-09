@@ -77,11 +77,13 @@ section {
   }
 }
 
-#theme {
+.theme-block {
   padding-top: calc(35px / 2);
 }
 
-.theme-block {
+.theme-block .theme-block-content {
+  margin-top: calc(31px / 2 * -1);
+
   box-sizing: border-box;
   width: 100%;
   height: 154px;
@@ -91,20 +93,26 @@ section {
   border-image-slice: 35;
   border-image-width: 35px 35px;
   border-image-repeat: round;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 @media all and (max-width: 863px) {
-  .theme-block {
+  .theme-block .theme-block-content {
     border-image-width: calc(24px + 1vw);
     height: 120px;
   }
 }
 
 .theme-block .theme-block-header {
+  position: relative;
+  z-index: 10; /* FIXME: */
+
   background-image: url('./img/frame-top.svg');
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  top: calc(31px / 2 * -1);
+
   height: 31px;
 }
 .theme-block-header h2 {
