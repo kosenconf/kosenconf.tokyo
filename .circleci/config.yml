@@ -58,6 +58,7 @@ jobs:
             git rm -rf .
             cp -a /tmp/workspace/build/. ~/git/
             mv /tmp/dot.circleci ~/git/.circleci
+            echo kosenconf.tokyo > CNAME
             git add -A
             git commit -m "CircleCI :rocket: ${CIRCLE_SHA1}" --allow-empty
             git push origin gh-pages
