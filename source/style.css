@@ -7,6 +7,7 @@ body {
   margin: 8px 0px;
   text-align: center;
   font-family: 'Lato', 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+  font-weight: 500;
 }
 
 .container {
