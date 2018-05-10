@@ -187,7 +187,6 @@ section {
 .btn {
   display: block;
 
-  font-family: 'YuGothic', sans-serif;
   font-weight: bold;
   font-size: 20px;
   color: #fff;
@@ -248,7 +247,6 @@ section {
 }
 
 section > h2 {
-  font-family: 'Lato', 'YuGothic', sans-serif;
   font-weight: bold;
   font-size: 52px;
   margin-top: 0;
