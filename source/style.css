@@ -96,7 +96,7 @@ section {
 
   border: 3px solid;
   border-image-source: url('./img/frame-border.svg');
-  border-image-slice: 35;
+  border-image-slice: 52.5; /*FIXME:*/
   border-image-width: 35px 35px;
   border-image-repeat: round;
 
@@ -106,7 +106,7 @@ section {
 }
 @media all and (max-width: 863px) {
   .theme-block .theme-block-content {
-    border-image-width: calc(24px + 1vw);
+    border-image-width: 52.5px;
     height: 120px;
   }
 }
@@ -138,6 +138,12 @@ section {
     background-image: url('./img/frame-top-sp.svg');
   }
 }
+@media all and (max-width: 320px) {
+  .theme-block .theme-block-header {
+    background-image: url('./img/frame-top-sp2.svg');
+  }
+}
+
 
 .theme-block-content {
 }
