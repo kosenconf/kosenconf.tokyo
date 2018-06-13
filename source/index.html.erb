@@ -60,6 +60,7 @@
           <%- end -%>
         </div>
       </section>
+      <% end %>
 
       <section id='sponsors'>
         <h2>
@@ -70,13 +71,12 @@
           <%- data.sponsors.each do |sponsor| -%>
             <div class='sponsor'>
               <div class='sponsor-img'><img alt='logo' src='<%= sponsor.logo %>'></div>
-              <h3><%= sponsor.name %>様</h3>
+              <h3><%= sponsor.name %></h3>
               <p><%= sponsor.description %></p>
             </div>
           <%- end -%>
         </div>
       </section>
-      <% end %>
 
       <section id='access'>
         <h2>
