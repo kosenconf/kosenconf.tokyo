@@ -70,7 +70,9 @@
         <div class='sponsors'>
           <%- data.sponsors.each do |sponsor| -%>
             <div class='sponsor'>
-              <div class='sponsor-img'><img alt='logo' src='<%= sponsor.logo %>'></div>
+              <a href="<%= sponsor.link %>" target="_blank">
+                <div class='sponsor-img'><img alt='logo' src='<%= sponsor.logo %>'></div>
+              </a>
               <h3><%= sponsor.name %></h3>
               <p><%= sponsor.description %></p>
             </div>
