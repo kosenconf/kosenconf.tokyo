@@ -1,12 +1,87 @@
-- time: '10:00'
-  title: '年中の距離が近付く技術年中の距離が近付く技術年中の距離が近付く技術'
-  speaker: 'あああああ'
-  avatar: 'https://pbs.twimg.com/profile_images/936071413601001473/crV0P5lm.jpg'
-- time: '10:30'
-  title: '年中の距離が近付く技術'
-  speaker: 'あああああ'
-  avatar: 'https://pbs.twimg.com/profile_images/936071413601001473/crV0P5lm.jpg'
-- time: '11:00'
-  title: '年中の距離が近付く技術'
-  speaker: 'あああああ'
-  avatar: 'https://pbs.twimg.com/profile_images/936071413601001473/crV0P5lm.jpg'
+---
+events:
+  - type: break
+    begin: '09:00'
+    end: '10:00'
+    name: 会場/受付
+  - type: break
+    begin: '10:00'
+    end: '10:25'
+    name: Opening
+  - type: special_talk
+    begin: '10:25'
+    end: '10:55'
+    talks:
+      main: liminatoil
+  - type: talk
+    begin: '11:00'
+    end: '11:20'
+    talks:
+      main: yu_suke1994
+      sub: yanoshi
+  - type: talk
+    begin: '11:25'
+    end: '11:45'
+    talks:
+      main: salvia_aka_meme
+      sub: ihcamonoihs
+  - type: talk
+    begin: '11:50'
+    end: '12:10'
+    talks:
+      main: tochikuji
+      sub: idemi
+  - type: break
+    begin: '12:10'
+    end: '13:40'
+    name: ランチ
+  - type: special_talk
+    begin: '13:40'
+    end: '14:10'
+    talks:
+      main: kyun_kun
+  - type: talk
+    begin: '14:15'
+    end: '14:35'
+    talks:
+      main: kaname_aizuki
+      sub: kim38
+  - type: talk
+    begin: '14:40'
+    end: '15:00'
+    talks:
+      main: taisukef
+      sub: hnmx4
+  - type: break
+    begin: '15:00'
+    end: '15:30'
+    name: コーヒーブレイク
+  - type: talk
+    begin: '15:30'
+    end: '15:50'
+    talks:
+      main: shooter_h
+      sub: ihcamonoihs
+  - type: talk
+    begin: '15:55'
+    end: '16:15'
+    talks:
+      main: neo6120
+      sub: puremind1994
+  - type: break
+    begin: '16:20'
+    end: '16:35'
+    name: 休憩
+  - type: break
+    begin: '16:35'
+    end: '17:50'
+    name: Lightning Talks
+  - type: break
+    begin: '17:50'
+    end: '18:00'
+    name: Closing
+  - type: break
+    begin: '18:00'
+    end: '20:00'
+    name: 懇親会
+

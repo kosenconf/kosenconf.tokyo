@@ -285,7 +285,7 @@ h2 .h2-two {
 }
 .timetable .tt-row {
   border-bottom: 3px solid #000;
-  height: 137px;
+  min-height: 137px;
 }
 .tt-row {
   display: flex;
@@ -300,11 +300,11 @@ h2 .h2-two {
   font-size: 26px;
 }
 .tt-content {
-  flex-basis: 55%;
   text-align: left;
 }
 .tt-avatar {
-  flex-shrink: 2;
+  flex-shrink: 1;
+  padding: 0 10px;
 }
 .tt-avatar img {
   height: 100px;
@@ -322,6 +322,25 @@ h2 .h2-two {
   font-size: 14px;
 }
 
+td.tt-time {
+  width: 20%;
+  margin-right: auto;
+}
+td.tt-event-type-special-talk, td.tt-event-type-break {
+  width: 80%;
+}
+td.tt-event-type-special-talk, td.tt-event-type-talk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+td.tt-event-type-talk {
+  width: 40%;
+}
+td.tt-event-type-break .tt-title {
+  text-align: center;
+}
+
 @media all and (max-width: 863px) {
   section#schedule {
     padding-left: calc(25 / 640 * 100vw);
@@ -337,7 +356,6 @@ h2 .h2-two {
     height: 100%;
   }
   .tt-content {
-    flex-basis: 60%;
     padding-left: calc(10px + 0.1vw);
   }
   .tt-time {

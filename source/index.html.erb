@@ -41,26 +41,48 @@
           <a class='btn btn2' href="https://connpass.com/event/87606/">参加登録する</a>
         </nav>
       </section>
-      <% if false %>
       <section id='schedule'>
         <h2>
           <span class='h2-one'>Schedule</span>
           <span class='h2-two'>発表プログラム</span>
         </h2>
-        <div class='timetable'>
-          <%- data.timetable.each do |prog| -%>
-            <div class='tt-row'>
-              <div class='tt-time'><%= prog.time %></div>
-              <div class='tt-avatar'><img alt='avatar' src='<%= prog.avatar %>'></div>
-              <div class='tt-content'>
-                <p class='tt-title'><%= prog.title %></p>
-                <p class='tt-speaker'><%= prog.speaker %></p>
-              </div>
-            </div>
+        <table class='timetable'>
+          <%- data.timetable.events.each do |event| -%>
+            <tr class='tt-row'>
+              <td class='tt-time'>
+                <div class='tt-time'><%= event.begin %> - <%= event.end %></div>
+              </td>
+              <%- if event.type == "special_talk" %>
+                <td class="tt-event-type-special-talk">
+                  <div class='tt-avatar'><img alt='avatar' src='img/<%= event.talks["main"]%>.jpg'></div>
+                  <div class='tt-content'>
+                    <p class='tt-title'><%= data.presentations[event.talks["main"]]&.title %></p>
+                    <p class='tt-speaker'><%= data.presentations[event.talks["main"]]&.name %></p>
+                  </div>
+                </td>
+              <% end %>
+              <%- if event.type == "talk" %>
+                <%- %w(main sub).each do |room| %>
+                  <td class="tt-event-type-talk">
+                    <div class='tt-avatar'><img alt='avatar' src='https://pbs.twimg.com/profile_images/936071413601001473/crV0P5lm.jpg'></div>
+                    <div class='tt-content'>
+                      <p class='tt-title'><%= data.presentations[event.talks[room]]&.title %></p>
+                      <p class='tt-speaker'><%= data.presentations[event.talks[room]]&.name %></p>
+                    </div>
+                  </td>
+                <% end %>
+              <% end %>
+              <%- if event.type == "break" %>
+                <td class="tt-event-type-break">
+                  <div class='tt-content'>
+                    <p class='tt-title'><%= event.name %></p>
+                  </div>
+                </td>
+              <% end %>
+            </tr>
           <%- end -%>
-        </div>
+        </table>
       </section>
-      <% end %>
 
       <section id='sponsors'>
         <h2>
