@@ -300,6 +300,7 @@ h2 .h2-two {
   font-size: 26px;
 }
 .tt-content {
+  flex-basis: 55%;
   text-align: left;
 }
 .tt-avatar {
@@ -356,6 +357,7 @@ td.tt-event-type-break .tt-title {
     height: 100%;
   }
   .tt-content {
+    flex-basis: 60%;
     padding-left: calc(10px + 0.1vw);
   }
   .tt-time {
