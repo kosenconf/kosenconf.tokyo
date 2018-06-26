@@ -64,7 +64,6 @@
               <%- if event.type == "talk" %>
                 <%- %w(main sub).each do |room| %>
                   <td class="tt-event-type-talk">
-                    <div class='tt-avatar'><img alt='avatar' src='https://pbs.twimg.com/profile_images/936071413601001473/crV0P5lm.jpg'></div>
                     <div class='tt-content'>
                       <p class='tt-title'><%= data.presentations[event.talks[room]]&.title %></p>
                       <p class='tt-speaker'><%= data.presentations[event.talks[room]]&.name %></p>
