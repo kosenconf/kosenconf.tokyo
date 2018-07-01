@@ -54,6 +54,7 @@
               </td>
               <%- if event.type == "special_talk" %>
                 <td class="tt-event-type-special-talk">
+                  <span class="tt-venue main"><%= data.venues["main"] %></span>
                   <div class='tt-avatar'><img alt='avatar' src='img/<%= event.talks["main"]%>.jpg'></div>
                   <div class='tt-content'>
                     <p class='tt-title'><%= data.presentations[event.talks["main"]]&.title %></p>
@@ -62,14 +63,19 @@
                 </td>
               <% end %>
               <%- if event.type == "talk" %>
-                <%- %w(main sub).each do |room| %>
-                  <td class="tt-event-type-talk">
+                <td class="tt-event-type-talk">
+                  <%- %w(main sub).each do |room| %>
                     <div class='tt-content'>
-                      <p class='tt-title'><%= data.presentations[event.talks[room]]&.title %></p>
-                      <p class='tt-speaker'><%= data.presentations[event.talks[room]]&.name %></p>
+                      <span class="tt-venue <%= room %>"><%= data.venues[room] %></span>
+                      <% icon = File.exist?("source/img/speakers/#{event.talks[room]}.jpg") ? "img/speakers/#{event.talks[room]}.jpg" : "img/speakers/blank.jpg" %>
+                      <div class='tt-avatar'><img alt='avatar' src='<%= icon %>'></div>
+                      <div class="tt-summary">
+                        <p class='tt-title'><%= data.presentations[event.talks[room]]&.title %></p>
+                        <p class='tt-speaker'><%= data.presentations[event.talks[room]]&.name %></p>
+                      </div>
                     </div>
-                  </td>
-                <% end %>
+                  <% end %>
+                </td>
               <% end %>
               <%- if event.type == "break" %>
                 <td class="tt-event-type-break">
