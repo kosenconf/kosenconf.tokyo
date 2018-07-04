@@ -67,7 +67,7 @@
                   <%- %w(main sub).each do |room| %>
                     <div class='tt-content'>
                       <span class="tt-venue <%= room %>"><%= data.venues[room] %></span>
-                      <% icon = File.exist?("source/img/speakers/#{event.talks[room]}.jpg") ? "img/speakers/#{event.talks[room]}.jpg" : "img/speakers/blank.jpg" %>
+                      <% icon = Dir.glob("source/img/speakers/#{event.talks[room]}.*").first&.gsub("source/", "") || "img/speakers/blank.jpg" %>
                       <div class='tt-avatar'><img alt='avatar' src='<%= icon %>'></div>
                       <div class="tt-summary">
                         <p class='tt-title'><%= data.presentations[event.talks[room]]&.title %></p>
