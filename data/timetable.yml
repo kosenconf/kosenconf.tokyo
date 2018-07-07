@@ -18,7 +18,7 @@ events:
     end: '11:20'
     talks:
       main: yu_suke1994
-      sub: yanoshi
+      sub: kim38
   - type: talk
     begin: '11:25'
     end: '11:45'
@@ -45,7 +45,7 @@ events:
     end: '14:35'
     talks:
       main: kaname_aizuki
-      sub: kim38
+      sub: yanoshi
   - type: talk
     begin: '14:40'
     end: '15:00'
