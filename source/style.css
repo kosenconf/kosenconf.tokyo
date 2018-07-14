@@ -176,7 +176,7 @@ section {
   width: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 @media all and (max-width: 863px) {
