@@ -369,6 +369,16 @@ td.tt-event-type-break .tt-title {
   text-align: center;
 }
 
+td.tt-event-type-lt .tt-content {
+  padding: 20px 30px;
+}
+td.tt-event-type-lt .tt-content .tt-summary {
+  margin-bottom: 6px;
+}
+td.tt-event-type-lt .tt-content p.tt-title {
+  font-size: 18px;
+}
+
 @media all and (max-width: 863px) {
   section#schedule {
     padding-left: calc(25 / 640 * 100vw);

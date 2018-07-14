@@ -84,6 +84,18 @@
                   </div>
                 </td>
               <% end %>
+              <%- if event.type == "lt" %>
+                <td class="tt-event-type-lt">
+                  <div class='tt-content'>
+                    <% data.lt_timetable.talks.each do |talk| %>
+                      <div class="tt-summary">
+                        <p class="tt-title"><%= talk.title %></p>
+                        <p class="tt-speaker"><%= talk.name %></p>
+                      </div>
+                    <% end %>
+                  </div>
+                </td>
+              <% end %>
             </tr>
           <%- end -%>
         </table>
