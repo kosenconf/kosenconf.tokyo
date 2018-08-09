@@ -58,6 +58,13 @@
                   <div class='tt-content'>
                     <p class='tt-title'><%= data.presentations[event.talks["main"]]&.title %></p>
                     <p class='tt-speaker'><%= data.presentations[event.talks["main"]]&.name %></p>
+                    <%- if data.presentations[event.talks["main"]]&.slide_link %>
+                      <p class='tt-slide'>
+                        <a href=<%= data.presentations[event.talks["main"]]&.slide_link %>>
+                          発表資料
+                        </a>
+                      </p>
+                    <% end %>
                   </div>
                 </td>
               <% end %>
@@ -71,6 +78,13 @@
                       <div class="tt-summary">
                         <p class='tt-title'><%= data.presentations[event.talks[room]]&.title %></p>
                         <p class='tt-speaker'><%= data.presentations[event.talks[room]]&.name %></p>
+                        <%- if data.presentations[event.talks[room]]&.slide_link %>
+                          <p class='tt-slide'>
+                            <a href=<%= data.presentations[event.talks[room]]&.slide_link %>>
+                              発表資料
+                            </a>
+                          </p>
+                        <% end %>
                       </div>
                     </div>
                   <% end %>
@@ -90,6 +104,13 @@
                       <div class="tt-summary">
                         <p class="tt-title"><%= talk.title %></p>
                         <p class="tt-speaker"><%= talk.name %></p>
+                        <%- if talk&.slide_link %>
+                          <p class='tt-slide'>
+                            <a href=<%= talk&.slide_link %>>
+                              発表資料
+                            </a>
+                          </p>
+                        <% end %>
                       </div>
                     <% end %>
                   </div>
