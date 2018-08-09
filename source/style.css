@@ -331,6 +331,10 @@ td.tt-event-type-special-talk {
   font-weight: normal;
   font-size: 14px;
 }
+p.tt-slide {
+  margin-top: 6px;
+  color: #000;
+}
 
 .tt-venue {
   border-radius: 5px;
